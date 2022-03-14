@@ -56,7 +56,6 @@ export default function Home() {
           return { name, language, html_url, created_at, description, login, avatar_url, id, type };
       })
       setResponseData( responseData );
-      console.log(responseData);
     }).catch(error => {
       console.log(`inside getrepos error: ${error}`)
       setErrorMessage({
@@ -67,7 +66,6 @@ export default function Home() {
 }
 
  const displayRepos = () => {
-   console.log("here");
     return responseData.map((gitData, index) => <Repo key={index} gitData={gitData} />);
   }
 
